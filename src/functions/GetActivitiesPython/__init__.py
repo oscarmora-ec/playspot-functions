@@ -35,6 +35,9 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
         # log how many found
         logging.info(f"Found {len(items)} activities")
 
+        # loggin first activity's name frim the results
+        logging.info(f"First activity name: {items[0]['name']}")
+
         # return activities as JSON response
         return func.HttpResponse(
             body=json.dumps(items),
@@ -44,6 +47,11 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
                 "Access-Control-Allow-Origin": "*"
             }
         )
+    
+      
+        
+                    
+                    
 
     except Exception as e:
         # log the error
